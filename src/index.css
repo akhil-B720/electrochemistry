@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply min-h-screen bg-[#020617] text-slate-100 antialiased font-sans;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% -20%, rgba(34, 211, 238, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(167, 139, 250, 0.08), transparent),
+    radial-gradient(ellipse 50% 30% at 0% 80%, rgba(52, 211, 153, 0.06), transparent);
+}
+
+/* Glass panel utility */
+@layer components {
+  .glass-panel {
+    @apply rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl shadow-glow;
+  }
+  .neon-text {
+    @apply bg-gradient-to-r from-cyan-300 via-fuchsia-300 to-emerald-300 bg-clip-text text-transparent;
+  }
+  .ripple {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-950/80;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-cyan-500/30 hover:bg-cyan-400/40;
+}
